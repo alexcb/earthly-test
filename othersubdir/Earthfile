@@ -4,8 +4,10 @@ all:
     WAIT
         BUILD +othersubdirimage
     END
+    FROM alpine
+    RUN --push echo push
 
 othersubdirimage:
-    FROM alpine
+    FROM ../subdir+subdirimage
     RUN echo othersubdirimage > /data
     SAVE IMAGE --push othersubidrimage:test

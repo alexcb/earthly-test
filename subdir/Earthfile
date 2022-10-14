@@ -4,6 +4,8 @@ all:
     WAIT
         BUILD +subdirimage
     END
+    FROM alpine  # this led to reproducing it
+    RUN --push echo push
 
 subdirimage:
     FROM alpine

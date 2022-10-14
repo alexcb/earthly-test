@@ -1,0 +1,11 @@
+VERSION --wait-block 0.6
+
+all:
+    WAIT
+        BUILD +subdirimage
+    END
+
+subdirimage:
+    FROM alpine
+    RUN echo subdirimage > /data
+    SAVE IMAGE --push subidrimage:test
